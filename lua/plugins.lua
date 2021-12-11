@@ -8,6 +8,15 @@ return require('packer').startup(function()
   -- My plugins here
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+  -- use 'kyazdani42/nvim-tree.lua'
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      -- 'kyazdani42/nvim-web-devicons', -- optional, for file icon
+    },
+    config = function() require'nvim-tree'.setup {} end
+  }
+  use 'neovim/nvim-lspconfig'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
