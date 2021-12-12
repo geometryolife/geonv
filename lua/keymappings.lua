@@ -2,12 +2,6 @@ vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true}
 vim.g.mapleader = ' '
 -- print(vim.inspect(vim.g.mapleader))
 
--- Set buffer-scoped local-options
--- <Tab> behavior
-vim.bo.expandtab = true
-vim.bo.shiftwidth = 2
-vim.bo.softtabstop = 2
-
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true }
 
