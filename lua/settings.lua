@@ -19,7 +19,7 @@ vim.o.ruler = true -- Show the line and column number of the cursor position, se
 vim.o.number = true -- set numbered lines
 vim.o.relativenumber = true -- set relative numbered lines
 vim.o.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
-vim.o.scrolloff = 8 -- Minimal number of screen lines to keep above and below the cursor
+vim.o.scrolloff = 4 -- Minimal number of screen lines to keep above and below the cursor
 vim.o.sidescrolloff = 8
 vim.o.wrap = false -- display lines as one long line
 

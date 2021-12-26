@@ -5,6 +5,13 @@ vim.g.mapleader = ' '
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true }
 
+-- Command-line-mode is swapped with repeat-line-search
+keymap('', ';', ':', opts)
+keymap('', ':', ';', opts)
+
+-- Press space twice to jump to the next '<++>' and edit it
+keymap('', '<Leader><Leader>', '<Esc>/<++><CR>:nohlsearch<CR>c4l', opts)
+
 -- Esc, Save, Quit
 keymap('i', 'kj', '<Esc>', opts)
 keymap('n', 'S', ':w<CR>', opts)
@@ -15,6 +22,16 @@ keymap('', 'H', '0', opts)
 keymap('', 'J', '5j', opts)
 keymap('', 'K', '5k', opts)
 keymap('', 'L', '$', opts)
+
+-- Insert mode cursor movement
+keymap('i', '<M-a>', '<End>', opts)
+keymap('i', '<M-0>', '<Home>', opts)
+keymap('i', '<M-h>', '<Left>', opts)
+keymap('i', '<M-j>', '<Down>', opts)
+keymap('i', '<M-k>', '<Up>', opts)
+keymap('i', '<M-l>', '<Right>', opts)
+keymap('i', '<C-a>', '<Home>', opts)
+keymap('i', '<C-e>', '<End>', opts)
 
 -- Press Space twice to jump to the next '<++>' and edit it
 keymap('', '<Leader><Leader>', '<Esc>/<++><CR>:nohlsearch<CR>c4l', opts)
