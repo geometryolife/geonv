@@ -16,3 +16,6 @@ vim.api.nvim_command('autocmd Filetype markdown inoremap <buffer> ,3 ###<Space><
 vim.api.nvim_command('autocmd Filetype markdown inoremap <buffer> ,4 ####<Space><Enter><++><Esc>kA')
 vim.api.nvim_command('autocmd Filetype markdown inoremap <buffer> ,5 #####<Space><Enter><++><Esc>kA')
 vim.api.nvim_command('autocmd Filetype markdown inoremap <buffer> ,l --------<Enter>')
+vim.api.nvim_command('autocmd Filetype markdown inoremap <buffer> ,` ·')
+vim.api.nvim_command('autocmd Filetype markdown inoremap <buffer> ,. <Space>=><Space>')
+vim.api.nvim_command('autocmd Filetype markdown inoremap <buffer> ,= ===<Space>Output<Space>===')
