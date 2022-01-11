@@ -10,6 +10,10 @@ local opts = { noremap = true }
 keymap('', ';', ':', opts)
 keymap('', ':', ';', opts)
 
+--Enter digraph
+keymap('i', '<C-m>', '<C-k>', opts)
+keymap('i', '<CR>', '<CR>', opts)
+
 -- Press space twice to jump to the next '<++>' and edit it
 keymap('', '<Leader><Leader>', '<Esc>/<++><CR>:nohlsearch<CR>c4l', opts)
 
@@ -37,6 +41,14 @@ keymap('!', '<M-k>', '<Up>', opts)
 keymap('!', '<M-l>', '<Right>', opts)
 keymap('i', '<C-a>', '<Home>', opts)
 keymap('i', '<C-e>', '<End>', opts)
+keymap('i', '<C-p>', '<Up>', opts)
+keymap('i', '<C-n>', '<Down>', opts)
+keymap('i', '<C-b>', '<Left>', opts)
+keymap('i', '<C-f>', '<Right>', opts)
+
+-- Find match
+keymap('i', '<C-j>', '<C-n>', opts)
+keymap('i', '<C-k>', '<C-p>', opts)
 --keymap('<++>', '<++>', '<++>', opts)
 
 -- Window Movement
