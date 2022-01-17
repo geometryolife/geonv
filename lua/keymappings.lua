@@ -1,6 +1,12 @@
 vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
 vim.g.mapleader = ' '
 -- print(vim.inspect(vim.g.mapleader))
+
+vim.api.nvim_set_keymap('', 's', '<NOP>', {noremap = true, silent = true})
+-- Disable the default `s` key
+-- keymap('n', 's', '<NOP>', opts)
+-- vim.api.nvim_del_keymap('','s')
+
 print(os.date())
 
 local keymap = vim.api.nvim_set_keymap
@@ -11,8 +17,9 @@ keymap('', ';', ':', opts)
 keymap('', ':', ';', opts)
 
 --Enter digraph
-keymap('i', '<C-m>', '<C-k>', opts)
-keymap('i', '<CR>', '<CR>', opts)
+--keymap('i', '<C-m>', '<C-k>', opts)
+--keymap('i', '<CR>', '<CR>', opts)
+keymap('i', '<M-m>', '<C-k>', opts)
 
 -- Press space twice to jump to the next '<++>' and edit it
 keymap('', '<Leader><Leader>', '<Esc>/<++><CR>:nohlsearch<CR>c4l', opts)
@@ -31,6 +38,10 @@ keymap('', 'H', '0', opts)
 keymap('', 'J', '5j', opts)
 keymap('', 'K', '5k', opts)
 keymap('', 'L', '$', opts)
+-- keymap('', '<expr> ss', 'col(".") == 1 ? "$" : "0"', opts)
+vim.api.nvim_command('noremap <expr> ss col(".") == 1 ? "$" : "0"')
+vim.api.nvim_command('vnoremap <expr> ss col(".") == 1 ? "$" : "0"')
+vim.api.nvim_command('vnoremap <expr> ss col(".") == 1 ? "$h" : "0"')
 
 -- Insert-mode and Command-line-mode cursor movement
 keymap('!', '<M-a>', '<End>', opts)
@@ -45,6 +56,8 @@ keymap('i', '<C-p>', '<Up>', opts)
 keymap('i', '<C-n>', '<Down>', opts)
 keymap('i', '<C-b>', '<Left>', opts)
 keymap('i', '<C-f>', '<Right>', opts)
+keymap('i', '<M-b>', '<Esc>bi', opts)
+keymap('i', '<M-f>', '<Esc>ea', opts)
 
 -- Find match
 keymap('i', '<C-j>', '<C-n>', opts)
@@ -56,10 +69,6 @@ keymap('n', '<Leader>h', '<C-w>h', opts)
 keymap('n', '<Leader>j', '<C-w>j', opts)
 keymap('n', '<Leader>k', '<C-w>k', opts)
 keymap('n', '<Leader>l', '<C-w>l', opts)
-
--- Disable the default `s` key
-keymap('n', 's', '<NOP>', opts)
--- vim.api.nvim_del_keymap('','s')
 
 keymap('n', 'sh', ':set nosplitright<CR>:vsplit<CR>', opts)
 keymap('n', 'sj', ':set splitbelow<CR>:split<CR>', opts)
@@ -93,6 +102,9 @@ vim.api.nvim_set_keymap('x', '<S-Down>', ':move \'>+1<CR>gv-gv\'', {noremap = tr
 
 -- Set wrap
 vim.api.nvim_set_keymap('n', '<Leader>sw', ':set wrap!<CR>', {noremap = true, silent = true})
+
+-- vim-table-mode
+vim.api.nvim_set_keymap('n', '<Leader>tm', ':TableModeToggle<CR>', opts)
 
 function GeoCompileRun()
   print("Hello World!")
