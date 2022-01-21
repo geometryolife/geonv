@@ -106,6 +106,21 @@ vim.api.nvim_set_keymap('n', '<Leader>sw', ':set wrap!<CR>', {noremap = true, si
 -- vim-table-mode
 vim.api.nvim_set_keymap('n', '<Leader>tm', ':TableModeToggle<CR>', opts)
 
+-- fzf
+keymap('n', '<Leader>ff', ':FZF<CR>', opts)
+keymap('n', '<Leader>fa', ':Ag<CR>', opts)
+keymap('n', '<Leader>bb', ':Buffers<CR>', opts)
+keymap('n', '<Leader>fgf', ':GFiles<CR>', opts)
+keymap('n', '<Leader>fgs', ':GFiles?<CR>', opts)
+keymap('n', '<Leader>sc', ':Color<CR>', opts)
+keymap('n', '<Leader>fll', ':Lines<CR>', opts)
+keymap('n', '<Leader>fbl', ':BLines<CR>', opts)
+keymap('n', '<Leader>hh', ':History<CR>', opts)
+keymap('n', '<Leader>hc', ':History:<CR>', opts)
+keymap('n', '<Leader>h/', ':History/<CR>', opts)
+keymap('n', '<Leader>mp', ':Maps<CR>', opts)
+keymap('n', '<Leader>mc', ':Commands<CR>', opts)
+
 function GeoCompileRun()
   print("Hello World!")
 end
