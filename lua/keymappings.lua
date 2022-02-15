@@ -115,9 +115,9 @@ keymap('n', '<Leader>fgs', ':GFiles?<CR>', opts)
 keymap('n', '<Leader>sc', ':Color<CR>', opts)
 keymap('n', '<Leader>fll', ':Lines<CR>', opts)
 keymap('n', '<Leader>fbl', ':BLines<CR>', opts)
-keymap('n', '<Leader>hh', ':History<CR>', opts)
-keymap('n', '<Leader>hc', ':History:<CR>', opts)
-keymap('n', '<Leader>h/', ':History/<CR>', opts)
+keymap('n', '<Leader>fh', ':History<CR>', opts)
+keymap('n', '<Leader>fc', ':History:<CR>', opts)
+keymap('n', '<Leader>f/', ':History/<CR>', opts)
 keymap('n', '<Leader>mp', ':Maps<CR>', opts)
 keymap('n', '<Leader>mc', ':Commands<CR>', opts)
 
@@ -188,12 +188,12 @@ function! CompileRunGcc()
 		set nosplitbelow
 		:term go run .
 	elseif &filetype == 'rust'
-		" set splitbelow
-		" split
-		" set nosplitbelow
-		" resize -15
-		" autocmd TermOpen term://* startinsert
-		execute "!cargo run"
+		set splitbelow
+		split
+		set nosplitbelow
+		resize -15
+		term cargo run
+		" execute "!cargo run"
 	endif
 endfunction]],
 true)
