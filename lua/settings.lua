@@ -17,11 +17,14 @@ vim.o.smarttab = true -- Make tabbing smarter
 -- vim.o.cursorline = true -- highlight the current line
 vim.o.ruler = true -- Show the line and column number of the cursor position, separated by a comma
 vim.o.number = true -- set numbered lines
-vim.o.relativenumber = true -- set relative numbered lines
+-- vim.o.relativenumber = true -- set relative numbered lines
 vim.o.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
 vim.o.scrolloff = 4 -- Minimal number of screen lines to keep above and below the cursor
 vim.o.sidescrolloff = 8
 vim.o.wrap = false -- display lines as one long line
+vim.o.list = true
+--vim.api.nvim_command('set listchars=tab:\|\ ,trail:▫')
+vim.o.colorcolumn = "80"
 
 -- vim.o.laststatus = 2 -- always display the status line
 -- vim.o.backup = false -- creates a backup file
@@ -42,7 +45,7 @@ vim.o.wrap = false -- display lines as one long line
 -- vim.o.splitbelow = true -- force all horizontal splits to go below current window
 -- vim.o.splitright = true -- force all vertical splits to go to the right of current window
 -- vim.o.swapfile = false -- creates a swapfile
--- vim.o.timeoutlen = 100 -- time to wait for a mapped sequence to complete (in milliseconds)
+vim.o.timeoutlen = 500 -- time to wait for a mapped sequence to complete (in milliseconds)
 -- vim.o.title = true -- set the title of window to the value of the titlestring
 -- opt.titlestring = "%<%F%=%l/%L - nvim" -- what the title of the window will be set to
 -- vim.o.updatetime = 300 -- faster completion

@@ -18,4 +18,25 @@ vim.api.nvim_command('autocmd Filetype markdown inoremap <buffer> ,5 #####<Space
 vim.api.nvim_command('autocmd Filetype markdown inoremap <buffer> ,l --------<Enter>')
 vim.api.nvim_command('autocmd Filetype markdown inoremap <buffer> ,` ·')
 vim.api.nvim_command('autocmd Filetype markdown inoremap <buffer> ,. <Space>=><Space>')
+vim.api.nvim_command('autocmd Filetype markdown inoremap <buffer> ,> <Space>→<Space>')
 vim.api.nvim_command('autocmd Filetype markdown inoremap <buffer> ,= ===<Space>Output<Space>===')
+vim.api.nvim_command('autocmd Filetype markdown inoremap <buffer> ,v -<Space>`<++>`<Space><++>')
+-- vim.api.nvim_command('autocmd Filetype rust inoremap <buffer> ,= // ===<Space>Output<Space>===<Enter>')
+vim.api.nvim_command('autocmd Filetype rust inoremap <buffer> ,= // ===<Space>Output<Space>===<Esc>')
+
+
+
+local weeks = {"星期天","星期一","星期二","星期三","星期四","星期五","星期六"}
+local tt = os.time()
+
+local function getWeek(time)
+  local w = os.date("%w", time)
+  return weeks[w + 1]
+end
+
+local date = os.date("%Y年%m月%d日，", tt)
+date = date .. getWeek(tt)
+
+
+-- Fix bug, can't input chinese quotation mark
+vim.api.nvim_command('autocmd Filetype markdown inoremap <buffer> ,r “”')

@@ -1,1 +1,3 @@
-vim.cmd('colorscheme nvcode')
+-- vim.cmd('colorscheme koehler')
+-- vim.cmd('colorscheme nvcode')
+-- vim.cmd('colorscheme kanagawa')

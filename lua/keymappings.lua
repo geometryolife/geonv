@@ -24,6 +24,10 @@ keymap('i', '<M-m>', '<C-k>', opts)
 -- Press space twice to jump to the next '<++>' and edit it
 keymap('', '<Leader><Leader>', '<Esc>/<++><CR>:nohlsearch<CR>c4l', opts)
 
+-- Open a terminal window
+-- keymap('', '<Leader>/', ':set splitbelow<CR>:split<CR>:resize +10<CR>:term<CR>', opts)
+keymap('', '<Leader>/', ':set splitbelow<CR>:split<CR>:term<CR>', opts)
+
 -- Open the `init.lua` file anytime
 keymap('n', '<Leader>rc', ':e ~/.config/nvim/init.lua<CR>', opts)
 
@@ -32,6 +36,7 @@ keymap('i', 'kj', '<Esc>', opts)
 keymap('n', 'S', ':w<CR>', opts)
 keymap('n', 'Q', ':q<CR>', opts)
 keymap('n', ',q', ':q!<CR>', opts)
+keymap('n', '<Leader>q', '<C-w>j:q<CR>', opts)
 
 -- Cursor Movement
 keymap('', 'H', '0', opts)
@@ -40,7 +45,6 @@ keymap('', 'K', '5k', opts)
 keymap('', 'L', '$', opts)
 -- keymap('', '<expr> ss', 'col(".") == 1 ? "$" : "0"', opts)
 vim.api.nvim_command('noremap <expr> ss col(".") == 1 ? "$" : "0"')
-vim.api.nvim_command('vnoremap <expr> ss col(".") == 1 ? "$" : "0"')
 vim.api.nvim_command('vnoremap <expr> ss col(".") == 1 ? "$h" : "0"')
 
 -- Insert-mode and Command-line-mode cursor movement
@@ -106,6 +110,9 @@ vim.api.nvim_set_keymap('n', '<Leader>sw', ':set wrap!<CR>', {noremap = true, si
 -- vim-table-mode
 vim.api.nvim_set_keymap('n', '<Leader>tm', ':TableModeToggle<CR>', opts)
 
+-- Find and replace
+keymap('', '\\s', ':%s//g<Left><Left>', opts);
+
 -- fzf
 keymap('n', '<Leader>ff', ':FZF<CR>', opts)
 keymap('n', '<Leader>fa', ':Ag<CR>', opts)
@@ -124,6 +131,21 @@ keymap('n', '<Leader>mc', ':Commands<CR>', opts)
 function GeoCompileRun()
   print("Hello World!")
 end
+
+vim.api.nvim_exec(
+[[
+noremap <Leader>rt :call CompileTest()<CR>
+function! CompileTest()
+  execute "w"
+  if &filetype == 'rust'
+    set splitbelow
+    split
+    set nosplitbelow
+    resize -15
+    term cargo test
+  endif
+endfunction
+]],true)
 
 local  result = vim.api.nvim_exec(
 [[
