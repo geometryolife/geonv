@@ -2,14 +2,15 @@ local G = require('G')
 
 G.map({
     -- 设置s t 无效 ;=: ,重复上一次宏操作
-    { 'n', 's',           '<nop>',   {} },
+    { 'n', 's',           '<NOP>',   {} },
     { 'n', ';',           ':',       {} },
     { 'v', ';',           ':',       {} },
-    { 'n', '+',           '<c-a>',   { noremap = true } },
-    { 'n', '_',           '<c-x>',   { noremap = true } },
+    { 'n', '+',           '<C-a>',   { noremap = true } },
+    { 'n', '_',           '<C-x>',   { noremap = true } },
     { 'n', ',',           '@q',      { noremap = true } },
 
-    { 'n', '\\',          ':nohlsearch<CR>', { noremap = true } },
+    --{ 'n', '\\',          ':set nohlsearch!<CR>', { noremap = true } },
+    { 'n', '<Space><CR>',          ':set nohlsearch!<CR>', { noremap = true } },
 
     -- 快速删除
     { 'n', '<bs>',        '"_ciw',   { noremap = true } },
@@ -18,6 +19,14 @@ G.map({
     -- ,打断
     { 'n', '<c-j>',       'f,a<cr><esc>', { noremap = true } },
     { 'i', '<c-j>',       '<esc>f,a<cr>', { noremap = true } },
+
+    -- Insert mode movement
+    { 'i', '<C-a>',       '<Home>',  { noremap = true } },
+    { 'i', '<C-e>',       '<End>',  { noremap = true } },
+    { 'i', '<C-p>',       '<Up>',  { noremap = true } },
+    { 'i', '<C-n>',       '<Down>',  { noremap = true } },
+    { 'i', '<C-b>',       '<Left>',  { noremap = true } },
+    { 'i', '<C-f>',       '<Right>',  { noremap = true } },
 
     -- cmap
     { 'c', '<c-a>',       '<home>',  { noremap = true } },
@@ -103,32 +112,36 @@ G.map({
     { 'n', '<m-d>',       '"_diw',            { noremap = true } },
     { 'n', '<m-r>',       '"_ciw',            { noremap = true } },
 
-    -- windows: sp 上下窗口 sv 左右分屏 sc关闭当前 so关闭其他 s方向切换
+    -- Windows: sp 上下窗口 sv 左右分屏 sc关闭当前 so关闭其他 s方向切换
     { 'n', 'sv',          ':vsp<cr><c-w>w',   { noremap = true } },
     { 'n', 'sp',          ':sp<cr><c-w>w',    { noremap = true } },
     { 'n', 'sc',          ':close<cr>',       { noremap = true } },
     { 'n', 'so',          ':only<cr>',        { noremap = true } },
-    { 'n', 's<Left>',     '<c-w>h',           { noremap = true } },
-    { 'n', 's<Right>',    '<c-w>l',           { noremap = true } },
-    { 'n', 's<Up>',       '<c-w>k',           { noremap = true } },
-    { 'n', 's<Down>',     '<c-w>j',           { noremap = true } },
-    { 'n', '<c-Space>',   '<c-w>w',           { noremap = true } },
-    { 'n', 's=',          '<c-w>=',           { noremap = true } },
+    { 'n', 'sh',     '<C-w>h',           { noremap = true } },
+    { 'n', 'sj',     '<C-w>j',           { noremap = true } },
+    { 'n', 'sk',       '<C-w>k',           { noremap = true } },
+    { 'n', 'sl',    '<C-w>l',           { noremap = true } },
+    { 'n', 's<Left>',     '<C-w>h',           { noremap = true } },
+    { 'n', 's<Down>',     '<C-w>j',           { noremap = true } },
+    { 'n', 's<Up>',       '<C-w>k',           { noremap = true } },
+    { 'n', 's<Right>',    '<C-w>l',           { noremap = true } },
+    --{ 'n', '<c-Space>',   '<C-w>w',           { noremap = true } },
+    { 'n', 's=',          '<C-w>=',           { noremap = true } },
     { 'n', '<m-.>',       "winnr() <= winnr('$') - winnr() ? '<c-w>10>' : '<c-w>10<'", { noremap = true, expr = true } },
     { 'n', '<m-,>',       "winnr() <= winnr('$') - winnr() ? '<c-w>10<' : '<c-w>10>'", { noremap = true, expr = true } },
 
-    -- buffers
-    { 'n', 'W',           ':bw<cr>',          { noremap = true, silent = true } },
-    { 'n', 'ss',          ':bn<cr>',          { noremap = true, silent = true } },
-    { 'n', '<m-left>',    ':bp<cr>',          { noremap = true, silent = true } },
-    { 'n', '<m-right>',   ':bn<cr>',          { noremap = true, silent = true } },
+    -- Buffers
+    { 'n', 'W',           ':bw<CR>',          { noremap = true, silent = true } },
+    { 'n', 'ss',          ':bn<CR>',          { noremap = true, silent = true } },
+    { 'n', '<m-left>',    ':bp<CR>',          { noremap = true, silent = true } },
+    { 'n', '<m-right>',   ':bn<CR>',          { noremap = true, silent = true } },
     { 'v', '<m-left>',    '<esc>:bp<cr>',     { noremap = true, silent = true } },
     { 'v', '<m-right>',   '<esc>:bn<cr>',     { noremap = true, silent = true } },
     { 'i', '<m-left>',    '<esc>:bp<cr>',     { noremap = true, silent = true } },
     { 'i', '<m-right>',   '<esc>:bn<cr>',     { noremap = true, silent = true } },
 
     -- tt 打开一个10行大小的终端
-    { 'n', 'tt',          ':below 10sp | term<cr>a', { noremap = true, silent = true } },
+    { 'n', 'tt',          ':below 10sp | term<CR>a', { noremap = true, silent = true } },
 
     -- 切换是否wrap
     { 'n', '\\w',         "&wrap == 1 ? ':set nowrap<cr>' : ':set wrap<cr>'", { noremap = true, expr = true } },
@@ -137,8 +150,8 @@ G.map({
     { 'n', '-',           "za", { noremap = true, silent = true } },
     { 'v', '-',           ':call v:lua.MagicFold()<CR>', { noremap = true, silent = true } },
 
-    -- space 行首行尾跳转
-    { 'n', '<space>',     ':call v:lua.MagicMove()<cr>', { noremap = true, silent = true } },
+    -- Tab 行首行尾循环跳转
+    { 'n', '<Tab>',     ':call v:lua.MagicMove()<cr>', { noremap = true, silent = true } },
     { 'n', '0',           '%', { noremap = true } },
     { 'v', '0',           '%', { noremap = true } },
 

@@ -40,7 +40,8 @@ function M.config()
     G.cmd("hi FloatermBorder ctermfg=fg ctermbg=none")
 
     M.setFTToggleMap('<c-t>', 'TERM', '')
-    M.setFTToggleMap('<c-f>', 'RANGER', 'ranger')
+    --M.setFTToggleMap('<c-f>', 'RANGER', 'ranger')
+    M.setFTToggleMap('<Space>f', 'RANGER', 'ranger')
     M.setFTToggleMap('<c-b>', 'DBUI', 'nvim +CALLDB')
     G.map({
         { 'n', '<F5>', ':lua require("pack/vim-floaterm").runFile()<cr>', {silent = true, noremap = true}},
