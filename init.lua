@@ -1,11 +1,2 @@
-require('plugins')
-require('keymappings')
-require('settings')
-require('colorscheme')
-require('nv-lspconfig')
--- require('nv-compe')
-require('lsp.lua-ls')
-require('md-snippets')
-require('init-lsp')
-
-vim.api.nvim_command('set pastetoggle=<F2>')
+require('profile')
+require('keymap')
