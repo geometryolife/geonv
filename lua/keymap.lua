@@ -3,6 +3,7 @@ local G = require('G')
 G.map({
     -- 设置 s t 无效 ;=: , 重复上一次宏操作
     { 'n', 's',           '<NOP>',   {} },
+    { '', '<M-x>', ':', {}},
     { 'n', ';',           ':',       {} },
     { 'v', ';',           ':',       {} },
     { 'n', '+',           '<C-a>',   { noremap = true } },
@@ -61,6 +62,7 @@ G.map({
     --{ 'n', 'Q',           ':q!<cr>', { noremap = true, silent = true } },
     { 'n', 'S',           ':w<CR>', { noremap = true, silent = true } },
     { 'n', 'Q',           ':q<CR>', { noremap = true, silent = true } },
+    { 'n', '<Space>wi', ':wq<CR>', { noremap = true, silent = true } },
 
     -- VISUAL SELECT 模式 s-tab tab 左右缩进
     { 'v', '<',           '<gv',     { noremap = true } },
@@ -170,7 +172,7 @@ G.map({
     { 'v', 't',           ':call v:lua.MagicToggleHump(v:false)<CR>', { noremap = true, silent = true } },
 })
 
--- 光标在$ 0 ^依次跳转
+-- 光标在 $ 0 ^ 依次跳转
 function MagicMove()
     local first = 1
     local head = #G.fn.getline('.') - #G.fn.substitute(G.fn.getline('.'), '^\\s*', '', 'G') + 1
