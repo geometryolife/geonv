@@ -41,6 +41,8 @@ function M.config()
         sol = {'/**', ' *', ' */'},
     }
     G.map({
+        -- { 'n', '<Space>;', ':NToggleComment<CR>', {silent = true, noremap = true}},
+        { 'n', '<Space>;', ':echo "Hello"<CR>', {silent = true, noremap = true}},
         { 'n', '??', ':NToggleComment<cr>', {silent = true, noremap = true}},
         { 'v', '/', ':<c-u>VToggleComment<cr>', {silent = true, noremap = true}},
         { 'v', '?', ':<c-u>CToggleComment<cr>', {silent = true, noremap = true}},

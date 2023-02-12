@@ -1,7 +1,10 @@
 local G = require('G')
 
 G.map({
+    { 'n', 'b', ':echo "keymap"<CR>', {silent = true}},
     -- 设置 s t 无效 ;=: , 重复上一次宏操作
+    { 'n', '<Space>;', ':NToggleComment<CR>', {silent = true, noremap = true}},
+    -- { 'n', '<Space>;', ':echo "Hello"<CR>', {silent = true, noremap = true}},
     { 'n', 's',           '<NOP>',   {} },
     { '', '<M-x>', ':', {}},
     { 'n', ';',           ':',       {} },
@@ -17,6 +20,8 @@ G.map({
     { 'n', 'gh', '0', { noremap = true } },
     { 'n', 'gl', '$', { noremap = true } },
     { 'n', 'ge', 'G', { noremap = true } },
+    { '', 'gs', '^', { noremap = true } },
+    { '', '<Space><Space>', '<Esc>/<++><CR>:nohlsearch<CR>"_c4l', {noremap = true} },
 
     --{ 'n', '\\',          ':set nohlsearch!<CR>', { noremap = true } },
     { 'n', '<Space><CR>',          ':set nohlsearch!<CR>', { noremap = true } },
@@ -40,6 +45,8 @@ G.map({
     -- Command-line mode
     { 'c', '<C-a>',       '<Home>',  { noremap = true } },
     { 'c', '<C-e>',       '<End>',   { noremap = true } },
+    { 'c', '<C-b>',       '<Left>',  { noremap = true } },
+    { 'c', '<C-f>',       '<Right>', { noremap = true } },
     --{ 'c', '<Up>',        '<C-p>',   { noremap = true } },
     --{ 'c', '<Down>',      '<C-n>',   { noremap = true } },
 
