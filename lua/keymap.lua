@@ -1,7 +1,6 @@
 local G = require('G')
 
 G.map({
-    { 'n', 'b', ':echo "keymap"<CR>', {silent = true}},
     -- 设置 s t 无效 ;=: , 重复上一次宏操作
     { 'n', '<Space>;', ':NToggleComment<CR>', {silent = true, noremap = true}},
     -- { 'n', '<Space>;', ':echo "Hello"<CR>', {silent = true, noremap = true}},
@@ -70,6 +69,7 @@ G.map({
     { 'n', 'S',           ':w<CR>', { noremap = true, silent = true } },
     { 'n', 'Q',           ':q<CR>', { noremap = true, silent = true } },
     { 'n', '<Space>wi', ':wq<CR>', { noremap = true, silent = true } },
+    { 'i', 'kj', '<Esc>', { noremap = true, silent = true } },
 
     -- VISUAL SELECT 模式 s-tab tab 左右缩进
     { 'v', '<',           '<gv',     { noremap = true } },
