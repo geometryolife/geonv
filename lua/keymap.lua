@@ -2,7 +2,6 @@ local G = require('G')
 
 G.map({
     -- 设置 s t 无效 ;=: , 重复上一次宏操作
-    { 'n', '<Space>;', ':NToggleComment<CR>', {silent = true, noremap = true}},
     { 'n', 's',           '<NOP>',   {} },
     { '', '<M-x>', ':', {}},
     { 'n', ';',           ':',       {} },

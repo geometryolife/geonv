@@ -1,7 +1,7 @@
 local G = {}
 
-G.g = vim.g
 G.b = vim.b
+G.g = vim.g
 G.o = vim.o
 G.v = vim.v
 G.fn = vim.fn
@@ -9,13 +9,13 @@ G.api = vim.api
 G.opt = vim.opt
 
 function G.map(maps)
-    for _,map in pairs(maps) do
+    for _, map in pairs(maps) do
         G.api.nvim_set_keymap(map[1], map[2], map[3], map[4])
     end
 end
 
 function G.hi(hls)
-    for group,color in pairs(hls) do
+    for group, color in pairs(hls) do
         local fg = color.fg and ' ctermfg=' .. color.fg or ' ctermfg=NONE'
         local bg = color.bg and ' ctermbg=' .. color.bg or ' ctermbg=NONE'
         local sp = color.sp and ' cterm=' .. color.sp or ''
