@@ -68,8 +68,10 @@ G.map({
     --{ 'n', 'Q',           ':q!<cr>', { noremap = true, silent = true } },
     { 'n', 'S',           ':w<CR>', { noremap = true, silent = true } },
     { 'n', 'Q',           ':q<CR>', { noremap = true, silent = true } },
-    { 'n', '<Space>wi', ':wq<CR>', { noremap = true, silent = true } },
-    { 'i', 'kj', '<Esc>', { noremap = true, silent = true } },
+    { 'n', '<Space>wi',   ':wq<CR>', { noremap = true, silent = true } },
+    { 'n', 'si',          ':wq<CR>', { noremap = true, silent = true } },
+    { 'n', 'su',          ':update<CR>', { noremap = true, silent = true } },
+    { 'i', 'kj',          '<Esc>', { noremap = true, silent = true } },
 
     -- VISUAL SELECT 模式 s-tab tab 左右缩进
     { 'v', '<',           '<gv',     { noremap = true } },
@@ -106,7 +108,7 @@ G.map({
     { 'v', '<c-s-right>', '$h',      { noremap = true } },
 
     -- 选中全文 选中 { 复制全文
-    { 'n', '<m-a>',       'ggVG',    { noremap = true } },
+    { 'n', '<Space>wa',       'ggVG',    { noremap = true } },
     { 'n', '<m-s>',       'vi{',     { noremap = true } },
 
     -- emacs风格快捷键 清空一行
@@ -136,15 +138,15 @@ G.map({
     { 'n', 'sp',          ':sp<CR><C-w>w',    { noremap = true } },
     { 'n', 'sc',          ':close<CR>',       { noremap = true } },
     { 'n', 'so',          ':only<CR>',        { noremap = true } },
-    { 'n', 'sh',     '<C-w>h',           { noremap = true } },
-    { 'n', 'sj',     '<C-w>j',           { noremap = true } },
-    { 'n', 'sk',       '<C-w>k',           { noremap = true } },
-    { 'n', 'sl',    '<C-w>l',           { noremap = true } },
+    { 'n', 'sh',          '<C-w>h',           { noremap = true } },
+    { 'n', 'sj',          '<C-w>j',           { noremap = true } },
+    { 'n', 'sk',          '<C-w>k',           { noremap = true } },
+    { 'n', 'sl',          '<C-w>l',           { noremap = true } },
     { 'n', 's<Left>',     '<C-w>h',           { noremap = true } },
     { 'n', 's<Down>',     '<C-w>j',           { noremap = true } },
     { 'n', 's<Up>',       '<C-w>k',           { noremap = true } },
     { 'n', 's<Right>',    '<C-w>l',           { noremap = true } },
-    { 'n', 'sf',   '<C-w>w',           { noremap = true } },
+    { 'n', 'sn',          '<C-w>w',           { noremap = true } },
     { 'n', 's=',          '<C-w>=',           { noremap = true } },
     { 'n', '<M-.>',       "winnr() <= winnr('$') - winnr() ? '<C-w>10>' : '<C-w>10<'", { noremap = true, expr = true } },
     { 'n', '<M-,>',       "winnr() <= winnr('$') - winnr() ? '<C-w>10<' : '<C-w>10>'", { noremap = true, expr = true } },
@@ -152,6 +154,7 @@ G.map({
     -- Buffers
     { 'n', 'W',           ':bw<CR>',          { noremap = true, silent = true } },
     { 'n', 'ss',          ':bn<CR>',          { noremap = true, silent = true } },
+    { 'n', 'sf',          ':bp<CR>',          { noremap = true, silent = true } },
     { 'n', '<M-Left>',    ':bp<CR>',          { noremap = true, silent = true } },
     { 'n', '<M-Right>',   ':bn<CR>',          { noremap = true, silent = true } },
     { 'v', '<M-Left>',    '<Esc>:bp<CR>',     { noremap = true, silent = true } },
