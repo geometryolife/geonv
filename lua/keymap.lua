@@ -3,7 +3,6 @@ local G = require('G')
 G.map({
     -- 设置 s t 无效 ;=: , 重复上一次宏操作
     { 'n', '<Space>;', ':NToggleComment<CR>', {silent = true, noremap = true}},
-    -- { 'n', '<Space>;', ':echo "Hello"<CR>', {silent = true, noremap = true}},
     { 'n', 's',           '<NOP>',   {} },
     { '', '<M-x>', ':', {}},
     { 'n', ';',           ':',       {} },
@@ -155,6 +154,8 @@ G.map({
     { 'n', 'W',           ':bw<CR>',          { noremap = true, silent = true } },
     { 'n', 'ss',          ':bn<CR>',          { noremap = true, silent = true } },
     { 'n', 'sf',          ':bp<CR>',          { noremap = true, silent = true } },
+    { 'v', 'ss',          '<Esc>:bn<CR>',     { noremap = true, silent = true } },
+    { 'v', 'sf',          '<Esc>:bp<CR>',     { noremap = true, silent = true } },
     { 'n', '<M-Left>',    ':bp<CR>',          { noremap = true, silent = true } },
     { 'n', '<M-Right>',   ':bn<CR>',          { noremap = true, silent = true } },
     { 'v', '<M-Left>',    '<Esc>:bp<CR>',     { noremap = true, silent = true } },

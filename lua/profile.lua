@@ -7,6 +7,7 @@ G.opt.wildmenu = true
 G.opt.pumheight = 10
 G.opt.conceallevel = 0
 G.opt.clipboard = 'unnamed,unnamedplus'
+G.opt.list = true
 
 -- 搜索高亮 空格+回车 去除匹配高亮 延迟
 G.opt.hlsearch = true
