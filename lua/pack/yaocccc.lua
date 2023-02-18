@@ -4,7 +4,7 @@ local M = {}
 function M.config()
     -- vim-echo
     G.map({
-        { 'v', 'C', ':<c-u>VECHO<cr>', {silent = true, noremap = true}},
+        { 'v', 'C', ':<C-u>VECHO<CR>', { silent = true, noremap = true } },
     })
     G.g.vim_echo_by_file = {
         js = 'console.log([ECHO])',
@@ -41,10 +41,10 @@ function M.config()
         sol = {'/**', ' *', ' */'},
     }
     G.map({
-        { 'n', '<Space>;', ':NToggleComment<CR>', {silent = true, noremap = true}},
-        { 'n', '??', ':NToggleComment<cr>', {silent = true, noremap = true}},
-        { 'v', '/', ':<c-u>VToggleComment<cr>', {silent = true, noremap = true}},
-        { 'v', '?', ':<c-u>CToggleComment<cr>', {silent = true, noremap = true}},
+        { 'n', '<Space>;', ':NToggleComment<CR>',      { silent = true, noremap = true } },
+        { 'n', '??',       ':NToggleComment<CR>',      { silent = true, noremap = true } },
+        { 'v', '/',        ':<C-u>VToggleComment<CR>', { silent = true, noremap = true } },
+        { 'v', '?',        ':<C-u>CToggleComment<CR>', { silent = true, noremap = true } },
     })
 end
 

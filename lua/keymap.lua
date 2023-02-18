@@ -25,7 +25,7 @@ G.map({
 
     -- 快速删除
     { 'n', '<BS>',        '"_ciw',   { noremap = true } },
-    { 'i', '<C-h>',       'col(".") == col("$") ? \'<Esc>"_db"_xa\' : \'<Esc>"_db"_xi\'', { noremap = true, expr = true } },
+    -- { 'i', '<C-h>',       'col(".") == col("$") ? \'<Esc>"_db"_xa\' : \'<Esc>"_db"_xi\'', { noremap = true, expr = true } },
 
     -- ,打断
     { 'n', '<C-j>',       'f,a<CR><Esc>', { noremap = true } },
