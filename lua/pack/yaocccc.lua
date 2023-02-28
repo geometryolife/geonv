@@ -42,6 +42,7 @@ function M.config()
     }
     G.map({
         { 'n', '<Space>;', ':NToggleComment<CR>',      { silent = true, noremap = true } },
+        { 'v', '<Space>;', ':<C-u>VToggleComment<CR>', { silent = true, noremap = true } },
         { 'n', '??',       ':NToggleComment<CR>',      { silent = true, noremap = true } },
         { 'v', '/',        ':<C-u>VToggleComment<CR>', { silent = true, noremap = true } },
         { 'v', '?',        ':<C-u>CToggleComment<CR>', { silent = true, noremap = true } },

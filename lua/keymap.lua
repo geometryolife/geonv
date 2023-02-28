@@ -12,11 +12,11 @@ G.map({
     { 'n', 'U',           '<C-r>',   { noremap = true } },
 
     -- Movement fast
-    { 'n', 'K', '5k', { noremap = true } },
-    { 'n', 'J', '5j', { noremap = true } },
-    { 'n', 'gh', '0', { noremap = true } },
-    { 'n', 'gl', '$', { noremap = true } },
-    { 'n', 'ge', 'G', { noremap = true } },
+    { '', 'K', '5k', { noremap = true } },
+    { '', 'J', '5j', { noremap = true } },
+    { '', 'gh', '0', { noremap = true } },
+    { '', 'gl', '$', { noremap = true } },
+    { '', 'ge', 'G', { noremap = true } },
     { '', 'gs', '^', { noremap = true } },
     { '', '<Space><Space>', '<Esc>/<++><CR>:nohlsearch<CR>"_c4l', {noremap = true} },
 
@@ -110,8 +110,8 @@ G.map({
     { 'n', '<m-s>',       'vi{',     { noremap = true } },
 
     -- emacs风格快捷键 清空一行
-    { 'n', '<C-u>',       'cc<Esc>', { noremap = true } },
-    { 'i', '<C-u>',       '<Esc>cc', { noremap = true } },
+    -- { 'n', '<C-u>',       'cc<Esc>', { noremap = true } },
+    -- { 'i', '<C-u>',       '<Esc>cc', { noremap = true } },
     { 'i', '<C-a>',       '<Esc>I',  { noremap = true } },
     { 'i', '<C-e>',       '<Esc>A',  { noremap = true } },
 
@@ -166,6 +166,7 @@ G.map({
     { 'n', 'tt',          ':below 10sp | term<CR>a', { noremap = true, silent = true } },
 
     -- 切换是否 wrap
+    { 'n', 'sw',         "&wrap == 1 ? ':set nowrap<CR>' : ':set wrap<CR>'", { noremap = true, expr = true } },
     { 'n', '\\w',         "&wrap == 1 ? ':set nowrap<CR>' : ':set wrap<CR>'", { noremap = true, expr = true } },
 
     -- 折叠
@@ -173,7 +174,7 @@ G.map({
     { 'v', '-',           ':call v:lua.MagicFold()<CR>', { noremap = true, silent = true } },
 
     -- Tab 行首行尾循环跳转
-    { 'n', '<Tab>',     ':call v:lua.MagicMove()<CR>', { noremap = true, silent = true } },
+    -- { 'n', '<Tab>',     ':call v:lua.MagicMove()<CR>', { noremap = true, silent = true } },
     { 'n', '0',           '%', { noremap = true } },
     { 'v', '0',           '%', { noremap = true } },
 
